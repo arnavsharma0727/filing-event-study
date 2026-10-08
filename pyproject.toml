@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "filing-event-study"
+version = "0.1.0"
+description = "Trading-session-aware event studies for SEC 8-K filings"
+requires-python = ">=3.11"
+dependencies = ["requests>=2.32"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+filing-events = "filing_event_study.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
